@@ -17,7 +17,7 @@ jobs:
     - name: Clone source
       run: |
         cd /home/runner
-        wget wget https://github.com/devspace-cloud/devspace/releases/download/v5.0.2/devspace-linux-amd64
+        wget https://github.com/devspace-cloud/devspace/releases/download/v5.0.2/devspace-linux-amd64
         chmod +x ./devspace-linux-amd64
         sudo mv ./devspace-linux-amd64 /usr/bin/devspace
         devspace add plugin https://github.com/devspace-cloud/devspace-cloud-plugin
