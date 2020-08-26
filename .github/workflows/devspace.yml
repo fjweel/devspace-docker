@@ -23,7 +23,7 @@ jobs:
         devspace add plugin https://github.com/devspace-cloud/devspace-cloud-plugin
     - name:  login key
       run: |
-        cd /home/runner
+        cd /home/runner/work/devspace-docker/devspace-docker
         devspace login --key=${{ secrets.key }}
         devspace create space v2peng
         devspace deploy
