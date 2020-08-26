@@ -26,4 +26,7 @@ jobs:
         cd /home/runner/work/devspace-docker/devspace-docker
         devspace login --key=${{ secrets.key }}
         devspace create space v2peng
-        devspace deploy
+    - name: Deploy
+      run: devspace deploy
+      env:
+        INGRESS_HOST: ${{ secrets.INGRESS_HOST }}
