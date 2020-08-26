@@ -30,6 +30,7 @@ jobs:
         devspace login --key=${{ secrets.key }}
         #删除空间
         devspace remove space ${{ secrets.myspace }}
+        sleep 5
         #创建空间
         devspace create space ${{ secrets.myspace }}
     - name: Deploy
