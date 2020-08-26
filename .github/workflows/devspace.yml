@@ -1,0 +1,29 @@
+name: devspace-reboot
+on:
+  schedule:
+    - cron: 35 21 * * 4
+  watch:
+    types: started
+jobs:
+  build:
+    runs-on: ubuntu-20.04 
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install build dependencies
+      run: |
+        sudo apt-get -y update
+        sudo apt-get -y install wget
+        sudo apt-get -y install curl
+    - name: Clone source
+      run: |
+        cd /home/runner
+        wget wget https://github.com/devspace-cloud/devspace/releases/download/v5.0.2/devspace-linux-amd64
+        chmod +x ./devspace-linux-amd64
+        sudo mv ./devspace-linux-amd64 /usr/bin/devspace
+        devspace add plugin https://github.com/devspace-cloud/devspace-cloud-plugin
+    - name:  login key
+      run: |
+        cd /home/runner
+        devspace login --key=${{ secrets.key }}
+        devspace create space v2peng
+        devspace deploy
