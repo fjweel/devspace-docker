@@ -1,0 +1,15 @@
+version: v1beta9
+deployments:
+- name: devspace
+  helm:
+    componentChart: true
+    values:
+      containers:
+      - image: byxiaopeng/ibm-docker:latest
+      service:
+        ports:
+        - port: 80
+      ingress:
+        tls: true
+      rules:
+      - host: v2peng.devspace.host 
