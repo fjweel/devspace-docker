@@ -12,7 +12,7 @@ deployments:
       ingress:
         rules:
         - host: ${INGRESS_HOST}
-        tls: true
+        tls: false
 vars:
 - name: INGRESS_HOST
   question: "Which domain do you want to use to expose Trilium to the public?"        
