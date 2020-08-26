@@ -1,9 +1,12 @@
 name: devspace-reboot
 on:
-  schedule:
-    - cron: 35 21 * * 4
+  #schedule:
+    #- cron: 35 21 * * 4
   watch:
     types: started
+  push:
+    branches:    
+      - master 
 jobs:
   build:
     runs-on: ubuntu-20.04 
