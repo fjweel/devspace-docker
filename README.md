@@ -6,7 +6,7 @@ https://app.devspace.cloud/
 
 github参数名称
 
-secrets  (登录需要的key ) key在登录devspace后设置里自行创建即可
+KEY  (登录需要的key ) key在登录devspace后设置里自行创建即可
 
 MYSPACE  (空间名称) 例子 xxxx
 
