@@ -31,7 +31,7 @@ jobs:
         #删除全部空间 避免点赞和修改造成部署失败
         devspace remove space --all
         #删除10秒执行创建 防止内容没删除干净
-        sleep 10
+        sleep 60
         #创建空间
         devspace create space ${{ secrets.myspace }}
     - name: Deploy
