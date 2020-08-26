@@ -5,11 +5,14 @@ deployments:
     componentChart: true
     values:
       containers:
-      - image: byxiaopeng/ibm-docker:latest
+        - image: byxiaopeng/ibm-docker:latest
       service:
         ports:
         - port: 80
       ingress:
+        rules:
+        - host: ${INGRESS_HOST}
         tls: true
-      rules:
-      - host: v2peng.devspace.host 
+vars:
+- name: INGRESS_HOST
+  question: "Which domain do you want to use to expose Trilium to the public?"        
