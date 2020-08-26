@@ -28,6 +28,9 @@ jobs:
       run: |
         cd /home/runner/work/devspace-docker/devspace-docker
         devspace login --key=${{ secrets.key }}
+        #删除空间
+        devspace remove space ${{ secrets.myspace }}
+        #创建空间
         devspace create space ${{ secrets.myspace }}
     - name: Deploy
       run: devspace deploy
