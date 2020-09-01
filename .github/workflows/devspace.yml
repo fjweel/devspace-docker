@@ -4,6 +4,7 @@ on:
     #- cron: 35 21 * * 4
   watch:
     types: started
+    
   push:
     branches:    
       - master 
